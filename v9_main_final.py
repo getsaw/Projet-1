@@ -195,7 +195,6 @@ class P1:
         
         return T, theta_total, distances
     
-    
 
 
 #-----------------------------------------------------------------------------------------------------------------#
@@ -303,7 +302,7 @@ class P1:
         plt.show()
             
             
-    def plot_fct_sup(self, tps_final, Phase = False, Energy = False):
+    def plot_fct_sup(self, tps_final, Phase = False):
         fig3 = plt.gcf()
         fig3.canvas.set_window_title('Simulation informatique du modèle physique')
         if Phase:
@@ -315,19 +314,7 @@ class P1:
             plt.grid(True)
             plt.plot(Y, W)
             plt.show()
-        if Energy:
-            T, E, E_G, E_C, E_K, E_A = self.Energies(tps_final)
-            plt.title("Energies en fonction du temps")
-            plt.xlabel("Temps (sec)")
-            plt.ylabel("Energies (J)")
-            plt.grid(True)
-            plt.plot(T, E, label = "E_totale", color = "purple")
-            plt.plot(T, E_G, label = "E_G flotteur")
-            plt.plot(T, E_C, label = "E_C poussée", color = "orange")
-            plt.plot(T, E_K, label = "E_K cinétique", color = "green")
-            plt.plot(T, E_A, label = "E_A charge", color = "red")
-            plt.legend()
-            plt.show()
+
         
 
 
@@ -348,6 +335,7 @@ Syst.plot_Theta_stab(100)
 #  => /!\ start: pas plus de 4 chiffres après la virgule /!\
 Syst.plot_theta_global_t(30, 0.2, 0.2, rien = 100)
 
-# tps_final, v, phase = False, Energy = False
-#Syst.plot_fct_sup(100, Energy = True)
+Syst.plot_tct_sup(100, True)
+
+
 
