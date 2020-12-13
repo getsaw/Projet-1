@@ -326,7 +326,7 @@ lst = [3.5, 0.772, 0.175] # => [barge, grue, flotteurs]
 Syst = P1(lst, 0.6, 0.095, 0.2, 264.6, 20)
 
 # end = distance max
-Syst.plot_Theta_distance(1) 
+#Syst.plot_Theta_distance(1) 
 
 # tps_final
 Syst.plot_Theta_stab(100)
@@ -335,7 +335,7 @@ Syst.plot_Theta_stab(100)
 #  => /!\ start: pas plus de 4 chiffres après la virgule /!\
 Syst.plot_theta_global_t(30, 0.2, 0.2, rien = 100)
 
-Syst.plot_tct_sup(100, True)
+Syst.plot_fct_sup(100, True)
 
 
 
