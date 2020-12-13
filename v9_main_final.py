@@ -147,8 +147,7 @@ class P1:
             G = self.G_dist(distances[i])
             deltaH = (2/self.longueur) * math.tan(theta[i])
             y_G = G[0]*math.cos(theta[i]) - G[1]*math.sin(theta[i])
-            y_Cp = self.longueur * deltaH / (6*self.Hc)
-            #y_Cp = self.longueur/2 - (self.longueur/3) * (3*self.Hc-deltaH)/(2*self.Hc)  # déplacement du centre de poussée selon l'axe y
+            y_Cp = self.longueur/2 - (self.longueur/3) * (3*self.Hc-deltaH)/(2*self.Hc)  # déplacement du centre de poussée selon l'axe y
             Cg = 9.81*mtot*y_G                                                           # Couple dû à la masse "principale"
             Ca = 9.81*mdep*distances[i]                                                  # Couple dû à la masse déplacée
             
