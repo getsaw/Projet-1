@@ -196,27 +196,6 @@ class P1:
         return T, theta_total, distances
     
     
-    def Energies(self, end):
-        T = np.linspace(0, end, end*P1.précision)
-        theta, omega = self.theta_stab(end, distance = self.dist_initial)
-        E_G = np.empty(len(theta))
-        E_C = np.empty(len(theta))
-        E_K = np.empty(len(theta))
-        E_A = np.empty(len(theta))
-        E_totale = np.empty(len(theta))
-        G = self.G_initial
-        for i in range(len(theta)):
-            deltaH = (2/self.longueur) * math.tan(theta[i])
-            y_G = G[0]*math.cos(theta[i]) - G[1]*math.sin(theta[i])
-            y_Cp = -self.longueur/2 + (self.longueur/3) * (3*self.Hc - deltaH)/(2*self.Hc)
-            C_a = 9.81*self.mdéplacée*self.dist_initial
-            E_G[i] = self.mtot*9.81*(y_G - G[0])
-            E_C[i] = -self.mtot*9.81*(y_Cp - 0)
-            E_K[i] = self.I*(omega[i]**2)/2
-            E_A[i] = -C_a*theta[i]
-            E_totale[i] = E_G[i] + E_C[i] + E_K[i] + E_A[i]
-        
-        return T, E_totale, E_G, E_C, E_K, E_A
 
 
 #-----------------------------------------------------------------------------------------------------------------#
